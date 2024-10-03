@@ -43,17 +43,14 @@
     <metastore.version>10.3.0.0-SNAPSHOT</metastore.version>
 
     <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
-    <jersey-servlet.version>1.19.1</jersey-servlet.version>
-    <jersey-spring.version>1.19.1</jersey-spring.version>
+    <jersey.version>2.44</jersey.version>
     <org.eclipse.swt.gtk.linux.x86_64.version>4.6</org.eclipse.swt.gtk.linux.x86_64.version>
 
     <!-- 'TEST' SCOPED DEPS -->
     <junit.version>4.13.2</junit.version>
     <mockito-core.version>5.10.0</mockito-core.version>
     <encoder.version>1.2</encoder.version>
-    <jsr311-api.version>1.1.1</jsr311-api.version>
-    <jersey-core.version>1.19.1</jersey-core.version>
-    <jersey-server.version>1.19.1</jersey-server.version>
+    <jaxrs.version>2.1</jaxrs.version>
     <slf4j-api.version>1.7.7</slf4j-api.version>
     <commons-lang.version>2.6</commons-lang.version>
     <eclipse.jface.version>3.33.0</eclipse.jface.version>
@@ -179,9 +176,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.sun.jersey</groupId>
-      <artifactId>jersey-servlet</artifactId>
-      <version>${jersey-servlet.version}</version>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet</artifactId>
+      <version>${jersey.version}</version>
       <exclusions>
         <exclusion>
           <groupId>*</groupId>
@@ -189,11 +186,54 @@
         </exclusion>
       </exclusions>
     </dependency>
-
     <dependency>
-      <groupId>com.sun.jersey.contribs</groupId>
-      <artifactId>jersey-spring</artifactId>
-      <version>${jersey-spring.version}</version>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet-core</artifactId>
+      <version>${jersey.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-server</artifactId>
+      <version>${jersey.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-common</artifactId>
+      <version>${jersey.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-client</artifactId>
+      <version>${jersey.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.ext</groupId>
+      <artifactId>jersey-spring5</artifactId>
+      <version>${jersey.version}</version>
       <exclusions>
         <exclusion>
           <groupId>*</groupId>
@@ -294,34 +334,8 @@
 
     <dependency>
       <groupId>javax.ws.rs</groupId>
-      <artifactId>jsr311-api</artifactId>
-      <version>${jsr311-api.version}</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-    <dependency>
-      <groupId>com.sun.jersey</groupId>
-      <artifactId>jersey-core</artifactId>
-      <version>${jersey-core.version}</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-    <dependency>
-      <groupId>com.sun.jersey</groupId>
-      <artifactId>jersey-server</artifactId>
-      <version>${jersey-core.version}</version>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>${jaxrs.version}</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
