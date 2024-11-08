@@ -16,8 +16,8 @@ package org.pentaho.di.baserver.utils.web;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintWriter;
 

@@ -13,7 +13,8 @@
 
 package org.pentaho.di.baserver.utils.web;
 
-import javax.servlet.ServletInputStream;
+import jakarta.servlet.ReadListener;
+import jakarta.servlet.ServletInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -38,5 +39,20 @@ public final class ServletInputStreamWrapper extends ServletInputStream {
   public void close() throws IOException {
     super.close();
     this.inputStream.close();
+  }
+
+  @Override
+  public boolean isFinished() {
+    return false;
+  }
+
+  @Override
+  public boolean isReady() {
+    return false;
+  }
+
+  @Override
+  public void setReadListener( ReadListener readListener ) {
+
   }
 }

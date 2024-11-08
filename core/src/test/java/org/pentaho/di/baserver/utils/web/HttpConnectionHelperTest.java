@@ -34,9 +34,9 @@ import org.pentaho.platform.api.engine.IPluginManager;
 import org.pentaho.platform.web.servlet.JAXRSPluginServlet;
 import org.springframework.beans.factory.ListableBeanFactory;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;

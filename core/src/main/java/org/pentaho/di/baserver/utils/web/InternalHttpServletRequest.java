@@ -13,19 +13,21 @@
 
 package org.pentaho.di.baserver.utils.web;
 
-import javax.servlet.AsyncContext;
-import javax.servlet.DispatcherType;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
+import jakarta.servlet.ServletConnection;
+import jakarta.servlet.AsyncContext;
+import jakarta.servlet.DispatcherType;
+import jakarta.servlet.http.HttpUpgradeHandler;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletInputStream;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Part;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -300,6 +302,11 @@ public class InternalHttpServletRequest implements HttpServletRequest {
     return null;
   }
 
+  @Override
+  public String changeSessionId() {
+    return null;
+  }
+
   @Override public boolean isRequestedSessionIdValid() {
     return false;
   }
@@ -312,7 +319,7 @@ public class InternalHttpServletRequest implements HttpServletRequest {
     return false;
   }
 
-  @Override public boolean isRequestedSessionIdFromUrl() {
+  public boolean isRequestedSessionIdFromUrl() {
     return false;
   }
 
@@ -344,7 +351,27 @@ public class InternalHttpServletRequest implements HttpServletRequest {
     return null;
   }
 
+  @Override
+  public String getRequestId() {
+    return null;
+  }
+
+  @Override
+  public String getProtocolRequestId() {
+    return null;
+  }
+
+  @Override
+  public ServletConnection getServletConnection() {
+    return null;
+  }
+
   @Override public Part getPart( String name ) throws IOException, ServletException {
+    return null;
+  }
+
+  @Override
+  public <T extends HttpUpgradeHandler> T upgrade( Class<T> aClass ) throws IOException, ServletException {
     return null;
   }
 
@@ -406,7 +433,6 @@ public class InternalHttpServletRequest implements HttpServletRequest {
     return null;
   }
 
-  @Override
   public String getRealPath( String path ) {
     return null;
   }
@@ -459,6 +485,11 @@ public class InternalHttpServletRequest implements HttpServletRequest {
   @Override
   public int getContentLength() {
     return ( this.content != null ? this.content.length : -1 );
+  }
+
+  @Override
+  public long getContentLengthLong() {
+    return 0;
   }
 
   @Override
