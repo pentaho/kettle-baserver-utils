@@ -6,12 +6,12 @@
   <parent>
     <groupId>org.pentaho</groupId>
     <artifactId>pentaho-ce-jar-parent-pom</artifactId>
-    <version>9.3.0.0-SNAPSHOT</version>
+    <version>9.3.0.10-887</version>
   </parent>
 
   <groupId>pentaho</groupId>
   <artifactId>pdi-platform-utils-plugin-parent</artifactId>
-  <version>9.3.0.0-SNAPSHOT</version>
+  <version>9.3.0.10-887</version>
   <packaging>pom</packaging>
 
   <name>Pentaho Community Edition Project: ${project.artifactId}</name>
@@ -38,9 +38,9 @@
     <eula-wrap_attach-dist-phase />
 
     <!-- 'COMPILE' SCOPED DEPS -->
-    <platform.version>9.3.0.0-SNAPSHOT</platform.version>
-    <pdi.version>9.3.0.0-SNAPSHOT</pdi.version>
-    <metastore.version>9.3.0.0-SNAPSHOT</metastore.version>
+    <platform.version>9.3.0.10-887</platform.version>
+    <pdi.version>9.3.0.10-887</pdi.version>
+    <metastore.version>9.3.0.10-887</metastore.version>
 
     <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
     <jersey-servlet.version>1.19.1</jersey-servlet.version>
